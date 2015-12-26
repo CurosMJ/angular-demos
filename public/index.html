@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular Demos</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body ng-app="myApp">
+<div class="container" ng-controller="myCtrl">
+    <h3>One way binding</h3>
+    <hr/>
+    <div class="row">
+        <div class="well col-xs-12">
+            <center>
+                <h3>{{title}}</h3>
+                <h3 ng-bind="title"></h3>
+            </center>
+        </div>
+        <form class="row">
+            <div class="col-xs-4">
+                <input class="form-control" id="title-input"/>
+            </div>
+            <div class="col-xs-4">
+                <button class="btn-block btn-primary btn btn-default" ng-click="updateTitle()">Update</button>
+            </div>
+            <div class="col-xs-4">
+                <button class="btn-block btn-primary btn btn-default" ng-click="callApi()">Update from API</button>
+            </div>
+        </form>
+    </div>
+
+    <h3>Two way binding</h3>
+    <hr/>
+    <div class="row">
+        <div class="well col-xs-12">
+            <center>
+                <h3>{{anotherTitle}}</h3>
+                <h3 ng-bind="anotherTitle"></h3>
+                <h5 ng-bind="anotherTitle | uppercase"></h5>
+            </center>
+        </div>
+        <form class="row">
+            <div class="col-xs-12">
+                <input class="form-control" ng-model="anotherTitle"/>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+<!-- Angular Code -->
+<script src="ng-demos.js"></script>
+</body>
+</html>
